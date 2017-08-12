@@ -1,0 +1,22 @@
+{
+    "name": "nan-apps/GoogleClient",
+    "description": "Wrapper para interactuar con apiclient de google",
+    "type": "library",
+    "require": {
+        "google/apiclient": "^2.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^0.9.9",
+        "phpunit/phpunit": "^6.2"
+    },
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": ".nan-apps",
+            "email": "gaston@nan-apps.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"GoogleClient\\": ""}
+    }
+}
