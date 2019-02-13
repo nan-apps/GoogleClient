@@ -30,7 +30,7 @@ Class Calendar{
 	public function addEvent( \Google_Service_Calendar_Event $event ){
 		try {	
 
-			return $this->api_service->events->insert( $this->calendar_id, $event );
+			return $this->api_service->events->insert( $this->calendar_id, $event, ['sendUpdates' => 'all'] );
 
 		} catch ( \Google_Service_Exception $e ) {
 			prd( $e );
@@ -49,10 +49,10 @@ Class Calendar{
 
 		try {	
 
-			return $this->api_service->events->patch( $this->calendar_id, $event_id, $changes );
+			return $this->api_service->events->patch( $this->calendar_id, $event_id, $changes, ['sendUpdates' => 'all'] );
 
 		} catch ( \Google_Service_Exception $e ) {
-			$this->_manageGoogleServiceException( $e, 'Error updating event, try again' );					
+			$this->_manageGoogleServiceException( $e, 'Error updating event, try again' );
 		}
 
 	}
